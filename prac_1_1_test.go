@@ -26,7 +26,7 @@ func TestIsUnique(t *testing.T) {
 	for _, tt := range tests {
 		testname := fmt.Sprintf("%v", tt.s)
 		t.Run(testname, func(t *testing.T) {
-			ans := isUnique_1(tt.s)
+			ans := isUnique_2(tt.s)
 			if ans != tt.want {
 				t.Errorf("got %v, want %v", ans, tt.want)
 			}
