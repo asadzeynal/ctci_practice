@@ -12,9 +12,6 @@ func isPalindromePermutation(s string) bool {
 			oddCount++
 		}
 	}
-	if oddCount > 1 {
-		return false
-	}
 
-	return true
+	return oddCount <= 1
 }
