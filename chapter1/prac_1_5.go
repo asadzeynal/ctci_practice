@@ -1,4 +1,4 @@
-package main
+package ch1
 
 func oneWay(a string, b string) bool {
 	if len(a) == len(b) {

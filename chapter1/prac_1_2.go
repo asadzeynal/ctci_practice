@@ -1,4 +1,4 @@
-package main
+package ch1
 
 func isPermutation(a string, b string) bool {
 	if len(a) != len(b) {

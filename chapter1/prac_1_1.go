@@ -1,4 +1,4 @@
-package main
+package ch1
 
 func isUnique_1(s string) bool {
 	chars := make(map[rune]struct{})

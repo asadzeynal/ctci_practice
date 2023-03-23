@@ -1,4 +1,4 @@
-package main
+package ch1
 
 func isPalindromePermutation(s string) bool {
 	charsCount := make(map[rune]int)

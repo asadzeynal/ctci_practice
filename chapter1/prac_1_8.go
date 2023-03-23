@@ -1,4 +1,4 @@
-package main
+package ch1
 
 func zeroMatrix(matrix [][]int) [][]int {
 	n := len(matrix)

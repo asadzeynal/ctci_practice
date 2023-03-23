@@ -1,4 +1,4 @@
-package main
+package ch1
 
 func rotateMatrix(matrix [][]int) [][]int {
 	level := len(matrix) - 1
