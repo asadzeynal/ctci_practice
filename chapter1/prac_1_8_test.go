@@ -3,6 +3,8 @@ package ch1
 import (
 	"fmt"
 	"testing"
+
+	"github.com/asadzeynal/ctci_practice/util"
 )
 
 func TestZeroMatrix(t *testing.T) {
@@ -32,7 +34,7 @@ func TestZeroMatrix(t *testing.T) {
 		testname := fmt.Sprintf("%v", tt.s)
 		t.Run(testname, func(t *testing.T) {
 			ans := zeroMatrix(tt.s)
-			if !EqualMatrix(ans, tt.want) {
+			if !util.EqualMatrix(ans, tt.want) {
 				t.Errorf("got %v, want %v", ans, tt.want)
 			}
 		})
