@@ -16,7 +16,7 @@ func removeDups(head *util.Node) *util.Node {
 	}
 
 	exists := make(map[int]struct{})
-	for curr.Next != nil {
+	for curr != nil {
 		exists[prev.Data] = struct{}{}
 		if _, ok := exists[curr.Data]; ok {
 			prev.Next = curr.Next
@@ -24,9 +24,6 @@ func removeDups(head *util.Node) *util.Node {
 			prev = prev.Next
 		}
 		curr = prev.Next
-	}
-	if _, ok := exists[curr.Data]; ok {
-		prev.Next = nil
 	}
 	return head
 }
