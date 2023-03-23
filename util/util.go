@@ -52,6 +52,7 @@ func SliceFromLinkedList(n *Node) []int {
 	result := make([]int, 0)
 	for n != nil {
 		result = append(result, n.Data)
+		n = n.Next
 	}
 	return result
 }
