@@ -7,13 +7,13 @@ import (
 )
 
 func TestIntersect(t *testing.T) {
-	node1 := &util.Node{Data: 1}
-	node2 := &util.Node{Data: 2}
-	node3 := &util.Node{Data: 3}
-	node4 := &util.Node{Data: 4}
-	node5 := &util.Node{Data: 5}
-	node6 := &util.Node{Data: 6}
-	node7 := &util.Node{Data: 7}
+	node1 := &util.Node{Data: 0}
+	node2 := &util.Node{Data: 0}
+	node3 := &util.Node{Data: 0}
+	node4 := &util.Node{Data: 0}
+	node5 := &util.Node{Data: 0}
+	node6 := &util.Node{Data: 0}
+	node7 := &util.Node{Data: 0}
 
 	node1.Next = node2
 	node2.Next = node3
@@ -31,6 +31,16 @@ func TestIntersect(t *testing.T) {
 	res2 := intersect(node1, node6)
 	if res2 {
 		t.Errorf("got %v, want %v", res2, false)
+	}
+
+	res3 := intersectWithReturn(node1, node5)
+	if res3 != node3 {
+		t.Errorf("got %v, want %v", res3, node3)
+	}
+
+	res4 := intersectWithReturn(node1, node6)
+	if res4 != nil {
+		t.Errorf("got %v, want %v", res4, nil)
 	}
 
 }
