@@ -5,7 +5,7 @@ import (
 )
 
 func isLinkedListPalindromeV2(n *util.Node) bool {
-	l := length(n)
+	l := util.LinkedListLength(n)
 	_, res := recurseV2(n, l)
 	return res
 }
@@ -26,7 +26,7 @@ func recurseV2(head *util.Node, length int) (*util.Node, bool) {
 
 // *****************************************************************
 func isLinkedListPalindrome(n *util.Node) bool {
-	l := length(n)
+	l := util.LinkedListLength(n)
 	stack := make([]int, l)
 	return recurse(n, &stack, 0)
 }
@@ -38,14 +38,4 @@ func recurse(n *util.Node, s *[]int, i int) bool {
 	(*s)[i] = n.Data
 	isEqual := recurse(n.Next, s, i+1)
 	return isEqual && (*s)[len(*s)-i-1] == n.Data
-}
-
-func length(head *util.Node) int {
-	var l int
-	for head != nil {
-		l++
-		head = head.Next
-	}
-
-	return l
 }

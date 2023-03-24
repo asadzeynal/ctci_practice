@@ -56,3 +56,13 @@ func SliceFromLinkedList(n *Node) []int {
 	}
 	return result
 }
+
+func LinkedListLength(head *Node) int {
+	var l int
+	for head != nil {
+		l++
+		head = head.Next
+	}
+
+	return l
+}
