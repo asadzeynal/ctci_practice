@@ -4,6 +4,27 @@ import (
 	"github.com/asadzeynal/ctci_practice/util"
 )
 
+func isLinkedListPalindromeV2(n *util.Node) bool {
+	l := length(n)
+	_, res := recurseV2(n, l)
+	return res
+}
+
+func recurseV2(head *util.Node, length int) (*util.Node, bool) {
+	if length <= 0 {
+		return head, true
+	}
+
+	if length == 1 {
+		return head.Next, true
+	}
+
+	node, isPalindrome := recurseV2(head.Next, length-2)
+
+	return node.Next, isPalindrome && head.Data == node.Data
+}
+
+// *****************************************************************
 func isLinkedListPalindrome(n *util.Node) bool {
 	l := length(n)
 	stack := make([]int, l)

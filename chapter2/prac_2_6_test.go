@@ -12,6 +12,10 @@ func TestSumIsLinkedListPalindrome(t *testing.T) {
 		n    []int
 		want bool
 	}{
+		{[]int{}, true},
+		{[]int{1, 2}, false},
+		{[]int{1}, true},
+		{[]int{1, 1}, true},
 		{[]int{7, 1, 6}, false},
 		{[]int{7, 1, 7}, true},
 		{[]int{7, 7, 7, 6, 6, 6}, false},
@@ -29,6 +33,19 @@ func TestSumIsLinkedListPalindrome(t *testing.T) {
 			node := util.LinkedListFromSlice(tt.n)
 
 			ans := isLinkedListPalindrome(node)
+
+			if ans != tt.want {
+				t.Errorf("got %v, want %v", ans, tt.want)
+			}
+		})
+	}
+
+	for _, tt := range tests {
+		testname := fmt.Sprintf("%v", tt.n)
+		t.Run(testname, func(t *testing.T) {
+			node := util.LinkedListFromSlice(tt.n)
+
+			ans := isLinkedListPalindromeV2(node)
 
 			if ans != tt.want {
 				t.Errorf("got %v, want %v", ans, tt.want)
