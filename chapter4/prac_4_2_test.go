@@ -3,17 +3,17 @@ package ch4
 import (
 	"testing"
 
-	u "github.com/asadzeynal/ctci_practice/chapter4/util"
+	"github.com/asadzeynal/ctci_practice/util"
 )
 
 func TestMinimalTree(t *testing.T) {
 	list := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
 	root := minimalTree(list)
-	u.PrintTree(root, 0, 'M')
+	util.PrintTree(root, 0, 'M')
 	isBinarySearchTreeCorrect(root, t)
 }
 
-func isBinarySearchTreeCorrect(node *u.TreeNode, t *testing.T) {
+func isBinarySearchTreeCorrect(node *util.TreeNode, t *testing.T) {
 	if node.Left == nil {
 		return
 	} else {

@@ -1,6 +1,6 @@
 package ch4
 
-import "github.com/asadzeynal/ctci_practice/chapter4/util"
+import "github.com/asadzeynal/ctci_practice/util"
 
 func minimalTree(list []int) *util.TreeNode {
 	if len(list) == 0 {
