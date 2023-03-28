@@ -72,9 +72,10 @@ func LinkedListLength(head *Node) int {
 }
 
 type TreeNode struct {
-	Data  int
-	Left  *TreeNode
-	Right *TreeNode
+	Data   int
+	Left   *TreeNode
+	Right  *TreeNode
+	Parent *TreeNode
 }
 
 func PrintTree(root *TreeNode, ns int, ch rune) {
