@@ -9,7 +9,7 @@ import (
 func TestMinimalTree(t *testing.T) {
 	list := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
 	root := minimalTree(list)
-	util.PrintTree(root, 0, 'M')
+	// util.PrintTree(root, 0, 'M')
 	isBinarySearchTreeCorrect(root, t)
 }
 

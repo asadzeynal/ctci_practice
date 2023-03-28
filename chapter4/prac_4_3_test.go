@@ -1,7 +1,6 @@
 package ch4
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/asadzeynal/ctci_practice/util"
@@ -26,13 +25,13 @@ func TestListOfDepths(t *testing.T) {
 
 	listOfLists := listOfDepths(nodes[0])
 
-	for i, v := range *listOfLists {
-		for v != nil {
-			fmt.Printf("%v %v, ", i, v.data.Data)
-			v = v.next
-		}
-		fmt.Println()
-	}
+	// for i, v := range *listOfLists {
+	// 	for v != nil {
+	// 		fmt.Printf("%v %v, ", i, v.data.Data)
+	// 		v = v.next
+	// 	}
+	// 	fmt.Println()
+	// }
 
 	if len(*listOfLists) != 5 {
 		t.Errorf("wrong list length, got: %v, want: %v", len(*listOfLists), 5)
